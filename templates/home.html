@@ -9,10 +9,14 @@ Home Page
   
 {% endblock title %}
 {% block body %}
-  
+  <div class="container">
+    <h1>Welcome Tution Home Page</h1>
 
-<h1>Welcome Tution Home Page</h1>
-
+    {% for n in name  %}
+      {{n}}<br>
+    {% endfor %}
+    
+  </div>
 
 
 
