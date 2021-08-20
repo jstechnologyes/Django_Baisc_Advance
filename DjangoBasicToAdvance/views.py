@@ -1,4 +1,5 @@
 from django.shortcuts import HttpResponse, render
+from tuition.models import Contact
 def home(request):
     if request.method=="GET":
         name=['Hadi','Sadi','Joti']
@@ -14,7 +15,6 @@ def contact(request):
         name=request.POST['name']
         phone=request.POST['phone']
         content=request.POST['content']
-        print(name)
-        print(phone)
-        print(content)
+        obj=Contact(name=name,phone=phone,content=content)
+        obj.save()
     return render(request,'contact.html')
