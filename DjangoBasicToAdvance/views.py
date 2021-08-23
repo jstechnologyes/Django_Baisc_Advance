@@ -10,11 +10,3 @@ def home(request):
     }
     return render(request,'home.html',context)
 
-def contact(request):
-    if request.method=="POST":
-        name=request.POST['name']
-        phone=request.POST['phone']
-        content=request.POST['content']
-        obj=Contact(name=name,phone=phone,content=content)
-        obj.save()
-    return render(request,'contact.html')
